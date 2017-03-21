@@ -11,5 +11,6 @@
  * `rails s`
 
 #### You should see this in your browser localhost:3000
+![Alt text](rails_screen_shot.png)
 
 
