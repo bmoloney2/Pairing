@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  database: pairing_development
+  username: postgres
+  password:
+  host: db
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5 
+development:
+  <<: *default
+  database: pairing_development
+  host: db 
+test:
+  <<: *default
+  database: pairing_test
+production:
+  <<: *default
+  database: pairing_production
+  username: postgress
+  password: 
