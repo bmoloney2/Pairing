@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170321200645) do
+ActiveRecord::Schema.define(version: 20170321210057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "pgcrypto"
+
+  create_table "posts", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string  "title",        null: false
+    t.text    "content",      null: false
+    t.date    "date",         null: false
+    t.string  "sender_id",    null: false
+    t.string  "recipient_id", null: false
+    t.integer "rating",       null: false
+    t.index ["sender_id", "recipient_id"], name: "index_posts_on_sender_id_and_recipient_id", unique: true, using: :btree
+  end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string  "first_name",       null: false
