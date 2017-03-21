@@ -1,7 +1,6 @@
 # Pairing
 
-* Here is our `erd diagram`
-
+## erd diagram
 ![ScreenShot](https://api.genmymodel.com/projects/_sSdLYA3fEeeoBvzX9wJhsQ/diagrams/_sSdLYg3fEeeoBvzX9wJhsQ/jpeg)
 
 ### Running locally
