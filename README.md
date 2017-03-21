@@ -1,6 +1,6 @@
 # Pairing
 
-## paring - erd diagram
+## pairing - erd diagram
 ![ScreenShot](https://api.genmymodel.com/projects/_sSdLYA3fEeeoBvzX9wJhsQ/diagrams/_sSdLYg3fEeeoBvzX9wJhsQ/png)
 
 ### Running locally
