@@ -9,3 +9,6 @@
 
 #### You should see this in your browser localhost:3000
 ![Alt text](rails_screen_shot.png)
+
+![ScreenShot](https://api.genmymodel.com/projects/_sSdLYA3fEeeoBvzX9wJhsQ/diagrams/_sSdLYg3fEeeoBvzX9wJhsQ/jpeg)
+
