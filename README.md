@@ -1,6 +1,6 @@
 ### Pairing
 
-## Installation
+## Running locally
  * `git clone https://github.com/rvasqz86/Pairing.git`
  * `cd Pairing`
  * `bundle install`
