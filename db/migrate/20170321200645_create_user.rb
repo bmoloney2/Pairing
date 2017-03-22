@@ -6,7 +6,7 @@ class CreateUser < ActiveRecord::Migration[5.0]
       t.string :email, :length=>50, null: false
       t.boolean :admin, null: false
       t.boolean :profile_approved
-      t.text :password_digest, null: false
+      # t.text :password_digest
       t.index([:email, :first_name], unique: true)
      # create_table 
      end
