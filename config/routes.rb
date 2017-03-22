@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
  
  root to: 'home#login'
 
@@ -7,4 +8,7 @@ Rails.application.routes.draw do
 
  get 'home/logout'
 
+
+  devise_for :users
+  root to: "home#login"
 end
