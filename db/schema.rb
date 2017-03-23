@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20170322163458) do
     t.string   "email",                               null: false
     t.boolean  "admin",                               null: false
     t.boolean  "profile_approved"
-    t.text     "password_digest",                     null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
