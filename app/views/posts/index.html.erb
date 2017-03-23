@@ -1,0 +1,17 @@
+<div class="posts index">
+  <h2> Posts </h2>
+  <%= link_to("Create a New Post", new_post_path, :class => 'action new') %>
+  <table class="listing" summary="Post list">
+    <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.content %></td>
+      <td class="actions">
+        <%= link_to("Show", post_path(post), :class => 'action show') %>
+        <%= link_to("Edit", '#', :class => 'action edit') %>
+        <%= link_to("Delete", '#', :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

@@ -1,13 +1,19 @@
 Rails.application.routes.draw do
+  devise_for :users
 
- 
- root to: 'home#link_to_logout'
+  devise_scope :user do
+    authenticated :user do
+      root to: 'posts#index'
+    end
 
- resources :user
- resources :post
+    unauthenticated :user do
+      root to: 'devise/sessions#new'
+    end
+  end
 
- get 'home/logout'
- post 'post/edit'
+  resources :users
+  resources :posts
 
- devise_for :users
+  get 'home/logout'
+  post 'post/edit'
 end
