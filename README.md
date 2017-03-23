@@ -1,16 +1,29 @@
 # Pairing
+## Paring Project Requirements
+#### High Level Requirement
+  * Create web applictation that will allow for pairing partners to recieve and give feedback anonymously
 
-## pairing - erd diagram
-![ScreenShot](https://api.genmymodel.com/projects/_sSdLYA3fEeeoBvzX9wJhsQ/diagrams/_sSdLYg3fEeeoBvzX9wJhsQ/png)
+#### MVP Level Requirements
+  * User Login / Authentication
+  * CRUD users
+  * User can CRUD reviews
+  
 
-### Running locally
- * `git clone https://github.com/rvasqz86/Pairing.git`
- * `cd Pairing`
- * `bundle install`
- * `rails db:create`
- * `rails s`
+## Planning
+### Model - erd diagram
+[ERD](docs/DatabaseDiagram.jpeg)
+### Views
+[Wire frame](docs/wireframe.pdf)
+### Problems Encountered
+ * Authentication
+ * Planning
+ * Git
 
-#### You should see this in your browser localhost:3000
-![Alt text](rails_screen_shot.png)
+### Approach to problems
+ * Devise
+ * Communicating
+ * Grit
 
+
+[configuration help](docs/running.md)
 
