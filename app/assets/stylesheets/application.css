@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+ body {
+    position: relative;
+    width: 100%;
+    /*border: 1px solid red;*/
+    display: block;
+  }
+
+  body > *  {
+    margin: auto;
+    width: 500px;
+   /* border: 1px solid blue;*/
+    display: block;
+    overflow: auto;
+  }
+
+  body > script {
+    display: none
+  }

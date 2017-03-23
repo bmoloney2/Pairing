@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
  
- root to: 'home#login'
+ root to: 'home#link_to_logout'
 
  resources :user
  resources :post
@@ -10,5 +10,4 @@ Rails.application.routes.draw do
  post 'post/edit'
 
  devise_for :users
-root to: "home#login"
 end
