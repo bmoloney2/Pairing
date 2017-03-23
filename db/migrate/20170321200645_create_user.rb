@@ -8,7 +8,6 @@ class CreateUser < ActiveRecord::Migration[5.0]
       t.boolean :profile_approved
       # t.text :password_digest
       t.index([:email, :first_name], unique: true)
-     # create_table 
      end
    end
 end

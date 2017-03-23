@@ -1,2 +1,4 @@
 class LoginController < ApplicationController
+
+  
 end
