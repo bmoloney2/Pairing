@@ -24,6 +24,11 @@
  * Communicating
  * Grit
 
-
+## Team members
+ * Mike - PM / Route Manager / Controller implementations
+ * Brian -  Model Manger
+ * Jin - Model designer / Controller implementations
+ * Raul - Generalist / Git / Branch managment
+ 
 [configuration help](docs/running.md)
 
