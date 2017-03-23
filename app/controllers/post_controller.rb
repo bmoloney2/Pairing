@@ -1,6 +1,5 @@
 class PostController < ApplicationController
-  ### this will allow def show end
-   before_filter :authenticate_user!, except: :edit
+  before_filter :authenticate_user!
   
   def show
     render :show 
