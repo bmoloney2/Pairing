@@ -1,9 +1,84 @@
+<script src="myscripts.js"></script>
+<h2>Who would you like to review?</h2>
 <form action ="edit" method="post">
-  First name:<br>
-  <input type="text" name="firstname" value="Mickey">
+ <div class="dropdown">
+   <button class="dropbtn btn btn-primary">Boots</button>
+   <div class="dropdown-content">
+     <a href="#">Raul</a>
+     <a href="#">Jin</a>
+     <a href="#">MCess</a>
+     <a href="#">Mike</a>
+     <a href="#">Conlin</a>
+     <a href="#">...</a>
+     <a href="#">...</a>
+     <a href="#">...</a>
+     <a href="#">...</a>
+     <a href="#">...</a>
+     <a href="#">...</a>
+     <a href="#">...</a>
+     <a href="#">...</a>
+     <a href="#">...</a>
+     <a href="#">...</a>
+   </div>
+ </div>
   <br>
-  Last name:<br>
-  <input type="text" name="lastname" value="Mouse">
-  <br><br>
-  <input type="submit" value="Submit">
+  <h2>What should the cadre know to help them improve?</h2>
+  <br>
+  <div class="form-group">
+    <label for="comment">Comment:</label>
+    <textarea class="form-control" rows="5" id="comment"></textarea>
+  </div>
+  <br>
+  <h2>Was working with them a positive experience?</h2>
+  <br>
+  <div class="radio-group">
+    <div class="radio">
+      <label><input type="radio" name="optradio">Yes</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="optradio">No</label>
+    </div>
+  </div>
+  <br>
+  <h2>Would you ever work with them again?</h2>
+  <br>
+  <div class="radio-group">
+    <div class="radio">
+      <label><input type="radio" name="optradio">Never Again</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="optradio">If I had to</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="optradio">Sure why not</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="optradio">Yes I'd like to</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="optradio">Always put us together!</label>
+    </div>
+  </div>
+  <br>
+  <h2>Overall how would rate working with them?</h2>
+  <br>
+  <div>
+  <div id='slider'></div>
+
+  </div>
+  <br>
+  <h2><h2>What are they doing great, what could they do better?</h2>
+  <br>
+  <div class="form-group">
+    <label for="comment">Comment:</label>
+    <textarea class="form-control" rows="5" id="comment"></textarea>
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="comment">Comment:</label>
+    <textarea class="form-control" rows="5" id="comment"></textarea>
+  </div>
+  <br>
+  <button type="button" class="btn btn-primary">Primary</button>
+  <!-- <input type="submit" value="Submit"> -->
 </form>

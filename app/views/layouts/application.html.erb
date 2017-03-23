@@ -7,6 +7,17 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
+  
+
+  <div class="topnav" id="myTopnav">
+      <!-- TODO: make it the ruby way -->
+    <a href="#">Home</a>
+    <!-- TODO: make it the ruby way -->
+    <a href="post">Post</a>
+    <%= link_to("Button", destroy_user_session_path, method: :delete) %>
+    <%= link_to("Logout", destroy_user_session_path, method: :delete) %>
+    
+  </div>
 
   <body>
   	<p class="notice"><%= notice %></p>
@@ -14,3 +25,5 @@
     <%= yield %>
   </body>
 </html>
+
+
