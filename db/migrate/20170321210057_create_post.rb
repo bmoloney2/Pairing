@@ -5,6 +5,7 @@ class CreatePost < ActiveRecord::Migration[5.0]
       t.text :content, null: false
       t.date :date
       t.string :user_id, null: false
+      t.string :recipient_email, null: false
       t.integer :rating, null: false
     end
   end

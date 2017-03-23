@@ -52,10 +52,28 @@ User.create!({
 # Post.create!({
 #   title: "Test Title 1",
 #   content: "test content 1",
-#   sender_id: "sender id 1",
-#   recipient_id: "recipient id 1",
+#   user_id: "UUID GOES HERE1 - NEEDS TO BE UNCOMMENTED IN 20170321210057_create_post.rb",
+#   recipient_email: "testemail1@gmail.com",
 #   rating: 3
 # })
+
+# Post.create!({
+#   title: "Test Title 2",
+#   content: "test content 2",
+#   user_id: "UUID GOES HERE2 - NEEDS TO BE UNCOMMENTED IN 20170321210057_create_post.rb",
+#   recipient_email: "testemail2@gmail.com",
+#   rating: 3
+# })
+
+
+# Post.create!({
+#   title: "Test Title 3",
+#   content: "test content 3",
+#   user_id: "UUID GOES HERE3 - NEEDS TO BE UNCOMMENTED IN 20170321210057_create_post.rb",
+#   recipient_email: "testemail3@gmail.com",
+#   rating: 3
+# })
+ 
  
 p "Created #{User.count} users"
 # p "Created #{Post.count} posts"

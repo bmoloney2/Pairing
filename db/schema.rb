@@ -17,11 +17,12 @@ ActiveRecord::Schema.define(version: 20170322163458) do
   enable_extension "pgcrypto"
 
   create_table "posts", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string  "title",   null: false
-    t.text    "content", null: false
+    t.string  "title",           null: false
+    t.text    "content",         null: false
     t.date    "date"
-    t.string  "user_id", null: false
-    t.integer "rating",  null: false
+    t.string  "user_id",         null: false
+    t.string  "recipient_email", null: false
+    t.integer "rating",          null: false
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
