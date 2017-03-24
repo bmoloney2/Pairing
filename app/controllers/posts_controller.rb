@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     #will display a single post
     # if Post.exists?(current_user.id)
     #   render :index
-    # else
+    # else 
     #   render :show
     # end
   end
