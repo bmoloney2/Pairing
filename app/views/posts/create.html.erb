@@ -1,1 +1,17 @@
-post_index.html.erb
+<h1>Posts#index</h1>
+<ul>
+  <%= form_for @post, do |f| %>
+    <li>
+    <%= post.title %>
+    <% if post.title present? %>
+      <td class="actions">
+        <%= link_to("Show", post_path(post), :class => 'action show') %>
+        <%= link_to("Edit", '#', :class => 'action edit') %>
+      </td>
+
+    <% end %>
+        <%= link_to("Delete", 'posts#destroy', method: delete, confirm: 'Are you sure?') %>
+    <%= f.submit %>
+    </li>
+  <% end %>
+</ul>

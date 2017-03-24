@@ -17,18 +17,20 @@ ActiveRecord::Schema.define(version: 20170322163458) do
   enable_extension "pgcrypto"
 
   create_table "posts", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string  "title",        null: false
-    t.text    "content",      null: false
-    t.date    "date",         null: false
-    t.string  "sender_id",    null: false
-    t.string  "recipient_id", null: false
-    t.integer "rating",       null: false
+    t.string   "title",         null: false
+    t.text     "admin_message", null: false
+    t.text     "content",       null: false
+    t.string   "sender_id",     null: false
+    t.string   "recipient_id",  null: false
+    t.integer  "rating",        null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.index ["sender_id", "recipient_id"], name: "index_posts_on_sender_id_and_recipient_id", unique: true, using: :btree
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "first_name",                          null: false
+    t.string   "last_name",                           null: false
     t.string   "email",                               null: false
     t.boolean  "admin"
     t.boolean  "profile_approved"
