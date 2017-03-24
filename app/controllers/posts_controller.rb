@@ -12,13 +12,14 @@ class PostsController < ApplicationController
   end
 
   def show
+      @posts_title = Post.find(params[:id]).title
+      @posts_content = Post.find(params[:id]).content
     #will display a single post
-    if Post.exists?(current_user.id)
-      @posts = Post.find(params[:id])
-      render :index
-    else
-      render :new
-    end
+    # if Post.exists?(current_user.id)
+    #   render :index
+    # else 
+    #   render :show
+    # end
   end
 
   def edit
