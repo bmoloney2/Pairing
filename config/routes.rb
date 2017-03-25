@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :posts
+  # resources :edit
 
   get 'home/logout'
   post 'post/edit'

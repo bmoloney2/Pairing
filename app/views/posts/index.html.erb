@@ -8,7 +8,7 @@
       <td><%= post.content %></td>
       <td class="actions">
         <%= link_to("Show", post_path(post), :class => 'action show') %>
-        <%= link_to("Edit", '#', :class => 'action edit') %>
+        <%= link_to("Edit", edit_post_path(post), :class => 'action edit') %>
         <%= link_to("Delete", '#', :class => 'action delete') %>
       </td>
     </tr>

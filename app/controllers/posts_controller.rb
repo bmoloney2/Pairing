@@ -1,10 +1,12 @@
+
 class PostsController < ApplicationController
+
   before_filter :authenticate_user!
 
   def index
     @posts = Post.all
   end
-
+  
   def new
   end
 
@@ -23,9 +25,29 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @user="user"
+    @post = Post.find params[:id]
+    # @user_first= current_user.first_name
+    # @user_last= current_user.last_name
   end
 
   def delete
   end
+
+  def update
+    @post= Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to '/'
+    else
+      render :edit
+    end
+  end
+    
+  
+
+
+    private
+
+    def post_params
+      params.require(:post).permit(:title, :content)
+    end
 end
