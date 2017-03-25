@@ -7,16 +7,7 @@
   <br>
   <h2>What should the cadre know to help them improve?</h2>
   <br>
-  <%= text_area_tag(:admin_message, "Hi, nice site", size: "44x6") %>
-  <br>
-  <h2>Was working with them a positive experience?</h2>
-  <br>
-  <%= radio_button_tag(:age, "child") %>
-  <%= label_tag(:age_child, "Yes") %>
-  <br>
-  <%= radio_button_tag(:age, "adult") %>
-  <%= label_tag(:age_adult, "No") %>
-  <br>
+  <%= f.text_area :admin_message, :value => "Message for Jon" %>
   <br>
   <h2>Would you ever work with them again?</h2>
   <br>
@@ -42,7 +33,8 @@
   <%= f.label :title %>
   <%= f.text_field :title %><br />
   <h2><h2>What are they doing great, what could they do better?</h2>
-  <%= text_area_tag(:message, "Hi, nice site", size: "44x6") %>
+  <%= f.text_area :content, :value => "Hi, nice work" %>
+
   <br>
   <%= f.submit %>
 <% end %>
