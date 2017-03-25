@@ -18,6 +18,7 @@ class PostsController < ApplicationController
     @post.content = post_params["content"]
     @post.title = post_params["title"]
     @post.admin_message = post_params["admin_message"]
+    @post.willing_to_work = post_params["willing_to_work"]
     @post.recipient_id = post_params["recipient_id"]
     @post.rating = post_params["rating"].to_i
     if @post.save!
@@ -67,7 +68,7 @@ end
 private 
 def post_params
      params.require(:post).permit(:title, :content)
- end
+end
 
 def destroy
   if @post.destroy
@@ -80,7 +81,7 @@ end
 
 
 def post_params
-  params.require(:post).permit(:title, :admin_message, :content, :sender_id, :recipient_id, :rating)
+  params.require(:post).permit(:title, :admin_message, :content, :sender_id, :recipient_id, :rating, :willing_to_work)
 end
 
 def find_post

@@ -11,26 +11,26 @@
   <br>
   <h2>Would you ever work with them again?</h2>
   <br>
-  <%= radio_button_tag(:age, "child") %>
-  <%= label_tag(:age_child, "Never Again") %>
-  <br>
-  <%= radio_button_tag(:age, "adult") %>
-  <%= label_tag(:age_adult, "If I had to") %>
-  <br>
-  <%= radio_button_tag(:age, "child") %>
-  <%= label_tag(:age_child, "Sure why not") %>
-  <br>
-  <%= radio_button_tag(:age, "adult") %>
-  <%= label_tag(:age_adult, "Yes I'd like to") %>
-  <br>
-  <%= radio_button_tag(:age, "adult") %>
-  <%= label_tag(:age_adult, "Always put us together!") %>
-  <br>
-  <h2>Overall how would rate working with them?</h2>
-  <!-- TODO:create slider -->
-  <%= f.label :rating %>
-  <%= f.number_field :rating %><br />
-  <%= f.label :title %>
+  <div class="radio-group"> 
+    <%= f.radio_button :willing_to_work, "Never" %>
+    <%= label_tag(:never, "Never Again") %>
+    <br>
+    <%= f.radio_button :willing_to_work, "Possibly" %>
+    <%= label_tag(:possible, "If I had to") %>
+    <br>
+    <%= f.radio_button :willing_to_work, "Sure" %>
+    <%= label_tag(:meh, "Sure why not") %>
+    <br>
+    <%= f.radio_button :willing_to_work, "Yes" %>
+    <%= label_tag(:yes, "Yes I'd like to") %>
+    <br>
+    <%= f.radio_button :willing_to_work, "Absolutely" %>
+    <%= label_tag(:insist, "Always put us together!") %>
+    <br>
+  </div>
+  <h2>Overall how would rate working with them [0 - 5]?</h2>
+  <%= f.range_field :rating, :min=>0, :max=>5, :class=>"slide", :id=>"slider1"%>
+  <%= f.label :Challenge%>
   <%= f.text_field :title %><br />
   <h2><h2>What are they doing great, what could they do better?</h2>
   <%= f.text_area :content, :value => "Hi, nice work" %>

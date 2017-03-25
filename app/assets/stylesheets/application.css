@@ -16,21 +16,20 @@
 
 
 
+
  body {
     position: relative;
     width: 100%;
-    /*border: 1px solid red;*/
     display: block;
   }
 
   body > *  {
     margin: auto;
-    width: 500px;
-   /* border: 1px solid blue;*/
+    width: 90%;
     display: block;
     overflow: auto;
+    padding-bottom: 20px;
   }
-
-  body > script {
-    display: none
+  .radio-group{
+    padding-left: 80px;
   }
