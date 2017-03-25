@@ -1,12 +1,5 @@
 <h2>Edit Post</h2>
 
-<!-- <p><%= @user_first %> <%= @user_last %>, you are currently editiing the following post:</p>
-
-<p><%= @posts_title %></p>
-<p><%= @posts_content %></p>
- -->
-<!-- <p><%= @post.title %></p> -->
-
 <p><%= form_for(@post) do |f| %>
       <%= f.label :title %>
       <%= f.text_field :title, class: 'form-control' %>
