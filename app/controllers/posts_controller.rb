@@ -1,4 +1,3 @@
-require 'pry'
 class PostsController < ApplicationController
   before_filter :authenticate_user!
   before_action :find_post
@@ -8,11 +7,14 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @users = User.all_except(current_user)
+    @post = Post.new(params[:post])
+    @reciever_id = params[:sender_id]
   end
 
   def create
     @post = Post.new
+    byebug
     if @post.save(post_params)
       flash[:notice] = "Successfully created post!"
       redirect_to post_path(@post)
@@ -23,8 +25,9 @@ class PostsController < ApplicationController
   end
 
   def show
-      @posts_title = Post.find(params[:id]).title
-      @posts_content = Post.find(params[:id]).content
+    # byebug
+    @posts_title = Post.find(params[:id]).title
+    @posts_content = Post.find(params[:id]).content
     #will display a single post
     if Post.exists?(current_user.id)
       @posts = Post.find(params[:id])

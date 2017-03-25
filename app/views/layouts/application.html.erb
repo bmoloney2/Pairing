@@ -13,7 +13,8 @@
       <!-- TODO: make it the ruby way -->
     <a href= '/'>Home</a>
     <!-- TODO: make it the ruby way -->
-    <a href="/posts/index">Post</a>
+   
+    <%= link_to("Post", new_post_path, method: :get) %>
     <%= link_to("Logout", destroy_user_session_path, method: :delete) %>
 
   </div>
