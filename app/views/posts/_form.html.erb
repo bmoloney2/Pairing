@@ -2,12 +2,12 @@
 
 <%= form_for @post do |f| %>
   <h2>Who would you like to review?</h2>
-  <%= f.collection_select :recipient_id, User.order(:first_name),:id,:first_name, include_blank: true %>
+  <%= f.collection_select :recipient_id, User.all_except(current_user).order(:first_name),:id,:first_name, include_blank: true %>
 
   <br>
   <h2>What should the cadre know to help them improve?</h2>
   <br>
-  <%= f.text_area :admin_message, :value => "Message for Jon" %>
+  <%= f.text_area :admin_message, style: 'width:100%;',:placeholder => "Jon, I think xyz is getting overwhelmed" %>
   <br>
   <h2>Would you ever work with them again?</h2>
   <br>
@@ -31,9 +31,9 @@
   <h2>Overall how would rate working with them [0 - 5]?</h2>
   <%= f.range_field :rating, :min=>0, :max=>5, :class=>"slide", :id=>"slider1"%>
   <%= f.label :Challenge%>
-  <%= f.text_field :title %><br />
+  <%= f.text_field :title, style: 'width:100%;'%><br />
   <h2><h2>What are they doing great, what could they do better?</h2>
-  <%= f.text_area :content, :value => "Hi, nice work" %>
+  <%= f.text_area :content, style: 'width:100%;', :placeholder => "Hi, nice work but I felt that I did not have enough input. I think you talk to much. I think you talk too little. I think you should ask for help more often, it's okay to no " %>
 
   <br>
   <%= f.submit %>
