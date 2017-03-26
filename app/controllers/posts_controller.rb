@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
+
   before_filter :authenticate_user!
   before_action :find_post
 
   def index
     @posts = Post.all
   end
-
+  
   def new
     @users = User.all_except(current_user)
     @post = Post.new(params[:post])
@@ -43,18 +44,25 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find params[:id]
+    # @user_first= current_user.first_name
+    # @user_last= current_user.last_name
   end
 
   def update
-    if @post.update_attributes(post_params)
-      flash[:notice] = "Successfully updated post!"
-      redirect_to post_path(@posts)
+    @post= Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to '/'
     else
-      flash[:alert] = "Error updating post!"
       render :edit
     end
   end
+    
+ private
 
+ def post_params
+     params.require(:post).permit(:title, :content)
+ end
   def destroy
     if @post.destroy
       flash[:notice] = "Successfully deleted post!"
