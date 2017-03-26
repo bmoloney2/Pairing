@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by(recipient_id: current_user.id)
+    @post = Post.find(params[:id])   
   end
 
   def edit
@@ -58,7 +58,12 @@ class PostsController < ApplicationController
   end
 
   private
+  
   def post_params
      params.require(:post).permit(:recipient_id, :admin_message, :willing_to_work, :rating, :title, :content)
+  end
+
+  def find_post
+    @post = Post.find_by_id(params[:id])
   end
 end

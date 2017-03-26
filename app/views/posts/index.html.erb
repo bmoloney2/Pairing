@@ -11,7 +11,7 @@
     <tr>
       <td><%= post.title %></td>
       <td><%= post.content %></td>
-      <td><%= link_to 'Show', post_path(post), :class => 'action show' %></td>
+      <td><%= link_to 'Show', post_path(post), :class => 'show' %></td>
       <td><%= link_to 'Delete', post_path(post), method: :delete, data: {confirm: 'Are you sure?'} %></td>
     </tr>
     <% end %>
