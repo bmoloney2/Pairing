@@ -31,10 +31,10 @@
   <h2>Overall how would rate working with them [0 - 5]?</h2>
   <%= f.range_field :rating, :min=>0, :max=>5, :class=>"slide", :id=>"slider1"%>
   <%= f.label :Challenge%>
-  <%= f.text_field :title, style: 'width:100%;'%><br />
+  <%= f.text_field :title, style: 'width:100%;', :placeholder => "Paindrome" %><br />
   <h2><h2>What are they doing great, what could they do better?</h2>
   <%= f.text_area :content, style: 'width:100%;', :placeholder => "Hi, nice work but I felt that I did not have enough input. I think you talk to much. I think you talk too little. I think you should ask for help more often, it's okay to no " %>
 
   <br>
-  <%= f.submit %>
+  <%= f.submit "submit", class: "btn btn-primary" %>
 <% end %>

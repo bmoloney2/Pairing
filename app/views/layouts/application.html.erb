@@ -7,20 +7,14 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
-
-  <div class="topnav" id="myTopnav">
-      <!-- TODO: make it the ruby way -->
-    <a href= '/'>Home</a>
-    <!-- TODO: make it the ruby way -->
-   
-    <%= link_to("Post", new_post_path, method: :get) %>
-    <%= link_to("Logout", destroy_user_session_path, method: :delete) %>
-
-  </div>
-
   <body>
-  	<p class="notice"><%= notice %></p>
+    <div class="topnav" id="myTopnav">
+      <%= render "layouts/header" %>
+      <%if user_signed_in? %>
+        <%= render "layouts/menu" %>
+      <%end %>
+    </div>
+    <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
