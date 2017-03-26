@@ -76,3 +76,20 @@
 .topnav .navbar-collapse {
   text-align: center;
 }
+
+.show-header{
+
+}
+
+.listing {
+
+}
+
+
+.listing th{
+  padding: 10px;
+}
+
+.listing td{
+  padding: 10px;
+}
