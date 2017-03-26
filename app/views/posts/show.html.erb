@@ -1,3 +1,29 @@
+<h2>Post</h2>
 <%= link_to "Back", :back %>
-<p><%= @posts_title %> </p>
-<p><%= @posts_content %> </p>
+<p>
+  <strong>Feedback</strong></br>
+  <%= @post.admin_message %>
+</p>
+
+<p>
+  <strong>Would you ever work with them again?</strong></br>
+  <%= @post.willing_to_work %>
+</p>
+
+<p>
+  <strong>Rating</strong></br>
+  <%= @post.rating %>
+</p>
+
+<p>
+  <strong>Title</strong></br>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Content</strong></br>
+  <%= @post.content %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %>
+<%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you postive?'} %>

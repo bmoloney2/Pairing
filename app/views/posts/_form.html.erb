@@ -1,9 +1,24 @@
 <!-- params.require(:post).permit(:title, :admin_message, :content, :sender_id) -->
 
-<%= form_for @post do |f| %>
+<%= form_for :post, url: posts_path do |f| %>
+
+  <% if @post.errors.any? %>
+      <div id="error_explanation">
+      <h2>
+        <%= pluralize(@post.errors.count, "error") %>
+prohibited
+        this post from being saved:
+      </h2>
+      <ul>
+        <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <h2>Who would you like to review?</h2>
   <%= f.collection_select :recipient_id, User.all_except(current_user).order(:first_name),:id,:first_name, include_blank: true %>
-
   <br>
   <h2>What should the cadre know to help them improve?</h2>
   <br>
@@ -11,7 +26,7 @@
   <br>
   <h2>Would you ever work with them again?</h2>
   <br>
-  <div class="radio-group"> 
+  <div class="radio-group">
     <%= f.radio_button :willing_to_work, "Never" %>
     <%= label_tag(:never, "Never Again") %>
     <br>

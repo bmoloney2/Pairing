@@ -65,7 +65,7 @@ Post.create!({ title:"hello", admin_message: "help",content: "content", sender_i
 
 Post.create!({ title:"hello", admin_message: "help",content: "content", sender_id: User.find_by(last_name: "Moloney").id, recipient_id:User.find_by(last_name: "Vasquez").id, rating: 4 })
 
-Post.create!({ title:"hello", admin_message: "help",content: "content", sender_id: User.find_by(last_name: "Kim").id, recipient_id:User.find_by(last_name: "Cessaro").id, rating: 4 })
+Post.create!({ title:"hello", admin_message: "help",content: "content", sender_id: User.find_by(last_name: "Kim").id, recipient_id:User.find_by(last_name: "Cessaro").id, rating: 5 })
 
 Post.create!({ title:"Hello", admin_message: "Template",content: "Hello welcome to Pairing", sender_id: User.find_by(last_name: "Administrator").id, recipient_id:User.find_by(last_name: "Cessaro").id, rating: 4 })
 p "Created #{Post.count} posts"
