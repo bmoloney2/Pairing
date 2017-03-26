@@ -4,6 +4,9 @@ class PostsController < ApplicationController
   def index
     @received_posts = Post.received_posts(current_user)
     @sent_posts = Post.sent_posts(current_user)
+  end
+
+  def admin
     if current_user.admin
       @all_posts = Post.all
     end
