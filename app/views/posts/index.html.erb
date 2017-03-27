@@ -1,16 +1,35 @@
+
+<%= link_to 'Write a new review', new_post_path %>
 <div class="posts index">
-  <h2> Posts </h2>
-  <%= link_to("Create a New Post", new_post_path, :class => 'action new') %>
+  <h2> Received Reviews </h2>
   <table class="listing" summary="Post list">
-    <% @posts.each do |post| %>
+    <tr>
+      <th> Title </th>
+      <th> Content </th>
+    </tr>
+    <% @received_posts.each do |post| %>
     <tr>
       <td><%= post.title %></td>
       <td><%= post.content %></td>
-      <td class="actions">
-        <%= link_to("Show", post_path(post), :class => 'action show') %>
-        <%= link_to("Edit", edit_post_path(post), :class => 'action edit') %>
-        <%= link_to("Delete", '#', :class => 'action delete') %>
-      </td>
+      <td><%= link_to 'Show', post_path(post), :class => 'show' %></td>
+      <td><%= link_to 'Delete', post_path(post), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </tr>
+    <% end %>
+  </table>
+
+  <table class="listing" summary="Post list">
+  <h2> Reviews I have written </h2>
+    <tr>
+      <th> Title </th>
+      <th> Content </th>
+    </tr>
+    <% @sent_posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.content %></td>
+      <td><%= link_to 'Show', post_path(post), :class => 'action show' %></td>
+      <td><%= link_to 'Edit', edit_post_path(post), :class => 'action edit' %></td>
+      <td><%= link_to 'Delete', post_path(post), method: :delete, data: {confirm: 'Are you sure?'} %></td>
     </tr>
     <% end %>
   </table>

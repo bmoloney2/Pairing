@@ -1,0 +1,7 @@
+<a href= '/'>Home</a>
+<%= link_to("View Reviews", '/', method: :get) %>
+<%= link_to("Write A New Review", new_post_path, method: :get) %>
+<%= link_to("Logout", destroy_user_session_path, method: :delete) %>
+<%if current_user.admin %>
+  <%= link_to("Admin", destroy_user_session_path, method: :delete) %>
+<%end %>

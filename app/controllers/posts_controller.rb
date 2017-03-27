@@ -1,50 +1,69 @@
-
 class PostsController < ApplicationController
-
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
 
   def index
-    @posts = Post.all
+    @received_posts = Post.received_posts(current_user)
+    @sent_posts = Post.sent_posts(current_user)
   end
-  
+
+  def admin
+    if current_user.admin
+      @all_posts = Post.all
+    end
+  end
+
   def new
+    @post = Post.new
+    @users = User.all_except(current_user)
   end
 
   def create
+    @post = Post.new(post_params)
+    @post.sender_id = current_user.id
+    if @post.save
+      flash[:notice] = "Successfully created post!"
+      redirect_to '/'
+    else
+      flash[:alert] = "Error creating new post!"
+      render 'new'
+    end
   end
 
   def show
-      @posts_title = Post.find(params[:id]).title
-      @posts_content = Post.find(params[:id]).content
-    #will display a single post
-    # if Post.exists?(current_user.id)
-    #   render :index
-    # else
-    #   render :show
-    # end
+    @post = Post.find(params[:id])   
   end
 
   def edit
-    @post = Post.find params[:id]
-    # @user_first= current_user.first_name
-    # @user_last= current_user.last_name
-  end
-
-  def delete
+    @post = Post.find(params[:id])
   end
 
   def update
     @post= Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to '/'
+      redirect_to @post
     else
-      render :edit
+      render 'edit'
     end
   end
-    
-    private
 
-    def post_params
-      params.require(:post).permit(:title, :content)
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.destroy
+      flash[:notice] = "Successfully deleted post!"
+      redirect_to posts_path
+    else
+      flash[:alert] = "Errors deleting post!"
+      render 'destroy'
     end
+  end
+
+  private
+  
+  def post_params
+     params.require(:post).permit(:recipient_id, :admin_message, :willing_to_work, :rating, :title, :content)
+  end
+
+  def find_post
+    @post = Post.find_by_id(params[:id])
+  end
 end
